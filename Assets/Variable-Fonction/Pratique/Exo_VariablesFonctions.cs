@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Exo_VariablesFonctions : MonoBehaviour
@@ -46,12 +47,33 @@ public class Exo_VariablesFonctions : MonoBehaviour
         float sum2 = Add(float1, float2);
 
         Debug.Log($"résultat de la somme1 = {sum1}");
-        Debug.Log($"résultat de la somme1 = {sum2}");
+        Debug.Log($"résultat de la somme2 = {sum2}");
 
         //Exo4
         int product;
-        //Multiply(integer1, integer2, product);
+
+        Multiply(integer1, integer2, out product);
+
+        Debug.Log($"résultat de la multiplication = {product}");
+
+        //Exo5
+
+        int minor = 17;
+        int eighteen = 18;
+        int major = 19;
+
+        IsMajor(minor);
+        IsMajor(eighteen);
+        IsMajor(major);
+
+        //Exo6
+        int intValue = 9;
+        intValue.AddInt(10);
+        Debug.Log($"Après la somme, intValue est égale à = {intValue}");
     }
+
+    int truc = 4;
+
     int Add(int value1, int value2)
     {
         return value1 + value2;
@@ -62,10 +84,13 @@ public class Exo_VariablesFonctions : MonoBehaviour
         return value1 + value2;
     }
 
-    int Multiply(int value1, int value2, int result)
+    int Multiply(int value1, int value2, out int result)
     {
         return result = value1 * value2;
 
-
+    }
+    void IsMajor(int age) 
+    {
+        Debug.Log($"Is Major = {(age >= 18)}");
     }
 }
