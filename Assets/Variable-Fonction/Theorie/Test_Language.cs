@@ -26,7 +26,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         (healthPoints, potionHealthPoints ) = ( potionHealthPoints, healthPoints ) ; // Permet d'associer des valeurs au variables, en l'occurence on inverse les valeurs des 2 variables
     
-        float healthPointsFloat = (float)healthPoints;
+        float healthPointsFloat = (float)healthPoints; //Definie une variable comme la version float d'un nombre entier
 
         var manaPoints = 10; // var permet l'inférence de type, en l'occurence il comprend que la variable est un int
 
