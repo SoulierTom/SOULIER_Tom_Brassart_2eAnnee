@@ -64,7 +64,9 @@ public class Conditions_Loops : MonoBehaviour
 
         // Permet d'affecter null à une variable valeur
         Nullable<int> y = null;
-        int? x = null; //diminutif
+        int? x = null; // diminutif de la ligne du dessus
+
+        x ??= 5; // Affecte 5 à x si celui-ci est null, sinon il garde sa valeur.
     }
 
    
