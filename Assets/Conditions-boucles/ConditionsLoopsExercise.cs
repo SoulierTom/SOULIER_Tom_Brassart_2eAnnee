@@ -1,5 +1,8 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class ConditionsLoopsExercise : MonoBehaviour
 {
@@ -10,16 +13,21 @@ public class ConditionsLoopsExercise : MonoBehaviour
     [SerializeField]
     private int _factorialValue = 2;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+// Start is called once before the first execution of Update after the MonoBehaviour is created
+void Start()
     {
-        Debug.Log("Exo 1");
+        Debug.Log("Exo 1 : ");
         CheckUserAge(_userAge);
 
-        Debug.Log("Exo 2");
+        Debug.Log("Exo 2 : ");
         DrawTriangle(_starTriangleSize);
 
+        Debug.Log("Exo 3 : ");
+        PrintFactorial(_factorialValue);
+
+        Debug.Log("Exo 4 : ");
+        BubbleSort();
     }
 
     void CheckUserAge(int ageToCheck)
@@ -32,7 +40,7 @@ public class ConditionsLoopsExercise : MonoBehaviour
         { 
             Debug.Log("Utilisateur mineur"); 
         }
-        else if (ageToCheck < 64) 
+        else if (ageToCheck < 1000) // La France de Macron
         { 
             Debug.Log("Utilisateur majeur"); 
         }
@@ -76,4 +84,54 @@ public class ConditionsLoopsExercise : MonoBehaviour
         
     }
 
+    void PrintFactorial(int f)
+    {
+        int currentValue = 1;
+
+        if (f >= 0)
+        {
+            for (int i = f; i > 0; i--)
+            {
+                currentValue = currentValue * i;
+            }
+
+            Debug.Log("La factorielle de " + f + " est : " + currentValue);
+        }
+        else
+        {
+            Debug.Log("Factorielle de nombre négatifs non définie.");
+        }
+    }
+
+    void BubbleSort()
+    {
+        // Création et initialisation du tableau d'objets
+        int[] tab = new int[8];
+
+        tab[0] = 84;
+        tab[1] = 6;
+        tab[2] = 41;
+        tab[3] = 157;
+        tab[4] = 64;
+        tab[5] = 29;
+        tab[6] = 1;
+        tab[7] = 42;
+       
+        Debug.Log("Tableau d'origine : " + tab[0] + ", " + tab[1] + ", " + tab[2] + ", " + tab[3] + ", " + tab[4] + ", " + tab[5] + ", " + tab[6] + ", " + tab[7]);
+
+        for(int i = 0; i < tab.Length - 1; i++) // Reproduit le balayage de vérification en boucle.
+        { 
+            for (int j = 0; j < tab.Length - (1 + i); j++) // Effectue le balayage, de la première valeur jusqu'à la dernière (le balayage s'arrete une valeur plus tot à chaque boucle).
+            {
+                if (tab[j] > tab[j + 1]) // Vérifie si la valeur est supérieure à celle qui la suit.
+                {
+                    (tab[j], tab[j + 1]) = (tab[j + 1], tab[j]); // Intervertie les valeurs
+                }
+            }
+        }
+
+        Debug.Log("Tableau dans l'ordre croissant : " + tab[0] + ", " + tab[1] + ", " + tab[2] + ", " + tab[3] + ", " + tab[4] + ", " + tab[5] + ", " + tab[6] + ", " + tab[7]);
+    }
 }
+
+    
