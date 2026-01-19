@@ -20,6 +20,8 @@ public class SecondTestClass
 
         int globalColor = FirstTestClass.globalColorCount;
 
+        Debug.Log(globalColor);
+
         //Test Structure
         FirstTestStruct firstTestStruct1 = new FirstTestStruct(new FirstTestClass());
         FirstTestStruct firstTestStruct2 = firstTestStruct1;
