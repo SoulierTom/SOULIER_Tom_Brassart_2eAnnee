@@ -122,6 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sphere: {fileID: 7713281221916310793}
-  _distance: 75
+  _distance: 50
   _speed: 50
-  _lifetime: 5
+  _lifetime: 4.5
