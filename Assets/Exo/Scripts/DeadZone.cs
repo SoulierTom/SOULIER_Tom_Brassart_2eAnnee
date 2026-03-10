@@ -15,6 +15,7 @@ public class DeadZone : MonoBehaviour
         if (other.gameObject.CompareTag("Destructible"))
         {
             sphereCount++;
+            Destroy(other.gameObject);
             Debug.Log("Sphere Destroyed");
 
             if (sphereCount == 2)

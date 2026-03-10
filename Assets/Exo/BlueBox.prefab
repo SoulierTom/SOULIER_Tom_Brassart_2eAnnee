@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2768051024574858937}
   - component: {fileID: 3672607009922757167}
   m_Layer: 0
-  m_Name: RedBox
+  m_Name: BlueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fbe0132bf92e3a46b1e9a51b933533d, type: 2}
+  - {fileID: 2100000, guid: 04488484ec4a4e24db80103448a63455, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,3 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35591bc8112966740a6b3fcc0b5524f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sphere: {fileID: 0}
+  _distance: 0
+  _speed: 0

@@ -1004,6 +1004,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1098822479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4157721402792048863, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+  m_PrefabInstance: {fileID: 8688126964941858128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1251786802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,17 +1744,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2768051024574858937, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672607009922757167, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672607009922757167, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+      propertyPath: _sphere
+      value: 
+      objectReference: {fileID: 1098822479}
+    - target: {fileID: 3672607009922757167, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+      propertyPath: _distance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672607009922757167, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
+      propertyPath: _lifetime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3740080359956692172, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3740080359956692172, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 3740080359956692172, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.7
+      value: -17.04
       objectReference: {fileID: 0}
     - target: {fileID: 3740080359956692172, guid: dca98992625421a4abb1e5b9267ed2f9, type: 3}
       propertyPath: m_LocalRotation.w
