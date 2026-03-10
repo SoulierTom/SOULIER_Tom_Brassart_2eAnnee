@@ -4,10 +4,11 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    public Camera publicCamera;   
+    [SerializeField]
+    private Camera publicCamera;   
     
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {

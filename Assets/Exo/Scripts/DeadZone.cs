@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeadZone : MonoBehaviour
@@ -8,8 +7,6 @@ public class DeadZone : MonoBehaviour
     [SerializeField]
     private GameObject triggerWin;
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Destructible"))
@@ -18,7 +15,7 @@ public class DeadZone : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Sphere Destroyed");
 
-            if (sphereCount == 2)
+            if (sphereCount == 4)
             {
                 Debug.Log("TriggerWin Activate");
                 triggerWin.SetActive(true);
