@@ -8,6 +8,9 @@ public class PlayerShipInputs : MonoBehaviour
     [SerializeField]
     private GameObject _bulletPrefab;
 
+    [SerializeField] 
+    private GameObject _bombPrefab;
+
     [SerializeField]
     private float _moveSpeed;
 
@@ -43,5 +46,16 @@ public class PlayerShipInputs : MonoBehaviour
         {
            _moveInput = Vector2.zero;
         }
+    }
+
+    public void Bomb(InputAction.CallbackContext context)
+    {  
+        if (context.performed)
+        {
+            Instantiate(_bombPrefab, transform.position, transform.rotation);
+        }
+        
+
+        
     }
 }

@@ -1,12 +1,16 @@
-using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class AwaitableScript : MonoBehaviour
 {
+
+    [SerializeField]
+    private int _testInt;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _ = Countdown();
+        TestAwaitable().Wait();
     }
 
     // Update is called once per frame
@@ -15,12 +19,10 @@ public class Bomb : MonoBehaviour
         
     }
 
-    async Task Countdown()
+    async Task TestAwaitable()
     {
         Debug.Log("Start");
-        await Awaitable.WaitForSecondsAsync(2);
+        await Awaitable.WaitForSecondsAsync(5);
         Debug.Log("Finish");
     }
-
-
 }
