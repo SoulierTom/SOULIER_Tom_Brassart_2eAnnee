@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     private float _bulletSpeed;
    
     
-    void Update()
+    private void Update()
     {
         transform.Translate(transform.up * Time.deltaTime * _bulletSpeed);
     }

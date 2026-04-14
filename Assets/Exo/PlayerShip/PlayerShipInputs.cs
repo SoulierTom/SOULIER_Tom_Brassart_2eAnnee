@@ -1,9 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerShipInputs : MonoBehaviour
 {
-    private ExoInputAction _newInputSystemActions;
+    private PlayerInput _playerInput;
 
     [SerializeField]
     private GameObject _bulletPrefab;
@@ -12,13 +13,17 @@ public class PlayerShipInputs : MonoBehaviour
     private GameObject _bombPrefab;
 
     [SerializeField]
+    private GameObject _uiText;
+
+    [SerializeField]
     private float _moveSpeed;
 
     private Vector2 _moveInput;
 
     private void Start()
     {
-        _newInputSystemActions = new ExoInputAction();
+        _playerInput = GetComponent<PlayerInput>();
+        _uiText.SetActive(false);
     }
 
     private void Update()
@@ -54,8 +59,40 @@ public class PlayerShipInputs : MonoBehaviour
         {
             Instantiate(_bombPrefab, transform.position, transform.rotation);
         }
-        
+    }
 
-        
+    public void PauseInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Pause");
+            GoPause();
+        }
+    }
+
+    private void GoPause()
+    {         
+        _playerInput.SwitchCurrentActionMap("UI");
+        Debug.Log("Switched to UI map");
+        _uiText.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void QuitPauseInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Pause");
+            ResumeGame();
+        }
+    }
+
+    private void ResumeGame()
+    {
+        _playerInput.SwitchCurrentActionMap("Game");
+        Debug.Log("Switched to Game map");
+        _uiText.SetActive(false);
+        Time.timeScale = 1f;
+
     }
 }

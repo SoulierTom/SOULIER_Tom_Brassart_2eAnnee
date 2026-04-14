@@ -3,24 +3,31 @@ using System.Threading.Tasks;
 
 public class Bomb : MonoBehaviour
 {
+    [SerializeField]
+    private SpriteRenderer _bombRenderer;
+
+    [SerializeField]
+    private Sprite _explosionSprite;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         _ = Countdown();
     }
 
-    // Update is called once per frame
-    void Update()
+    private async Task Countdown()
     {
-        
+        await Awaitable.WaitForSecondsAsync(1);
+        _ = Explosion();
     }
 
-    async Task Countdown()
+    private async Task Explosion()
     {
-        Debug.Log("Start");
-        await Awaitable.WaitForSecondsAsync(2);
-        Debug.Log("Finish");
+        _bombRenderer.enabled = false;
+        await Awaitable.WaitForSecondsAsync(0.1f);
+        _bombRenderer.sprite = _explosionSprite;
+        _bombRenderer.enabled = true;
+        await Awaitable.WaitForSecondsAsync(0.25f);
+        _bombRenderer.enabled = false;
     }
-
-
 }
